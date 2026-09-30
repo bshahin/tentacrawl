@@ -1,7 +1,8 @@
 import { z } from 'zod';
 
-// Challenge families CaptchaAI can solve. hCaptcha, FunCaptcha/Arkose, GeeTest
-// and DataDome are intentionally absent: the service does not solve them.
+// Challenge families this module can solve. hCaptcha, FunCaptcha/Arkose, GeeTest v4
+// and DataDome are intentionally absent: the service does not solve them. GeeTest v3 is
+// solved by the API (method=geetest) but not implemented in this module yet.
 export const CAPTCHAAI_SOLVABLE_KINDS = [
   'recaptcha-v2',
   'recaptcha-v3',

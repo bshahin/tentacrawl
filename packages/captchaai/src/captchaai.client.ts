@@ -87,8 +87,8 @@ function delay(ms: number): Promise<void> {
 }
 
 // 2Captcha-compatible HTTP client for https://ocr.captchaai.com.
-// CaptchaAI does not solve hCaptcha, FunCaptcha/Arkose, GeeTest or DataDome,
-// so this client deliberately exposes no methods for them.
+// CaptchaAI does not solve hCaptcha, FunCaptcha/Arkose, GeeTest v4 or DataDome, and this
+// client does not implement GeeTest v3 yet, so it deliberately exposes no methods for them.
 export class CaptchaAIClient {
   private readonly apiKey: string;
   private readonly baseUrl: string;

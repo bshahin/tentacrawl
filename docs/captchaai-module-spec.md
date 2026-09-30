@@ -29,8 +29,9 @@ CaptchaAI solves:
 | Cloudflare Turnstile  | `method=turnstile`, `sitekey`, `pageurl`                         |
 | Image (text) captcha  | `method=base64`, `body`                                          |
 
-CaptchaAI does **not** solve hCaptcha, FunCaptcha/Arkose, GeeTest or DataDome.
-Those families are deliberately absent from every type union in the module. When
+CaptchaAI does **not** solve hCaptcha, FunCaptcha/Arkose, GeeTest v4 or DataDome. Its API does
+solve GeeTest v3 (`method=geetest`), but this module does not implement it yet. All of these
+families are deliberately absent from every type union in the module. When
 one is detected the extension emits a `captchaai.unsupported-challenge` signal
 and, for a `solveCaptcha` step, fails the step with an explicit reason instead of
 sending a request that would never succeed.
